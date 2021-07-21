@@ -1,0 +1,210 @@
+@media (min-width: 576px) {
+  h2 {
+    font-family: Alata, sans-serif;
+    font-size: 64px;
+  }
+}
+
+.clean-block.clean-hero {
+  background-image: url("../../assets/img/tech/image4.jpg");
+  color: rgba(9, 162, 255, 0.85);
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+.vision {
+}
+
+.block-heading.mode-of-admission-sec {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.sub-features {
+  font-family: 'Almendra';
+  font-size: 24px;
+}
+
+.heads-card-title {
+  font-family: 'Almendra';
+}
+
+.card-text.heads-card-par {
+  font-family: 'Aref Ruqaa';
+}
+
+@media (min-width: 768px) {
+  .vision-desc {
+    font-size: large;
+  }
+}
+
+.clean-block.clean-info {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .clean-block .block-heading p {
+    text-align: center;
+    max-width: 75%;
+    margin: auto;
+    opacity: .7;
+  }
+}
+
+@media (min-width: 768px) {
+  .container.admission-req {
+    text-align: center;
+  }
+}
+
+ul {
+}
+
+@media (min-width: 768px) {
+  .req-list {
+    width: 75%;
+    align-content: center;
+    text-align: center;
+    margin: auto;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .clean-block .block-heading {
+    padding-top: 16px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (min-width: 768px) {
+  .welcome-par {
+    font-size: large;
+    margin: auto;
+    font-family: cursive;
+  }
+}
+
+@media (min-width: 768px) {
+  .welcome-head {
+    font-size: 96px;
+    font-family: 'Almendra';
+  }
+}
+
+.text.welcome-text {
+}
+
+.clean-block.clean-hero.hero-section {
+  height: 50%;
+}
+
+.block-heading.admission-req {
+}
+
+@media (min-width: 768px) {
+  .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+}
+
+@media (min-width: 300px) {
+  .col-md-6.col-center-text {
+    text-align: center;
+  }
+}
+
+@media (min-width: 300px) {
+  .clean-block.clean-hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width:576px) {
+  .clean-block.clean-hero {
+    min-height: 420px;
+  }
+}
+
+.col-auto {
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: auto;
+  margin: auto;
+  max-width: 100%;
+}
+
+.list-req {
+  font-family: 'Aref Ruqaa', serif;
+  font-size: 18px;
+  text-align: left;
+}
+
+.admission-req-img {
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .page-intro-greeting {
+    font-size: larger;
+  }
+}
+
+@media (min-width: 1200px) {
+  .page-intro-title {
+    font-size: xx-large;
+  }
+}
+
+@media (min-width: 992px) {
+  body {
+    font-family: 'Almendra';
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 576px) {
+  .container.admission-req-cont {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+}
+
+.btn.btn-primary.welcome-btn {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: rgba(8,122,255,0.1);
+  border: solid;
+  border-width: thin;
+  border-radius: 2px;
+  width: 100%;
+}
+
+@media (min-width: 300px) {
+  body {
+    font-family: 'Atma';
+  }
+}
+
+.contact-icon {
+  color: rgb(59,153,224);
+}
+
+* {
+  font-family: inherit;
+}
+
