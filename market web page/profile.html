@@ -1,3 +1,24 @@
+<?php
+
+session_start();
+$name = $_SESSION['name'];
+if(isset($_POST['logout'])) {
+
+    session_start();
+
+
+    $_SESSION['logout'] = $_POST['logout'];
+
+
+    header('Location:index.php ');
+
+
+}
+
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 
@@ -39,8 +60,9 @@
         <div class="container"><a class="navbar-brand logo" href="#">BUYAM SELLAM</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="service-page.php">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="profile.php">Profile</a></li>
                     <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
                     <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
@@ -61,10 +83,12 @@
                         <div style="height: 80px;">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">Username</h4>
-                                    <h6 class="text-muted card-subtitle mb-2">Student</h6>
-                                    <p class="card-text">I love my school</p>
-                                    <button class="btn btn-primary btn-block" type="submit">Log Out</button>
+                                    <h4 class="card-title">Hey <?php echo $_SESSION($name);?> </h4>
+                                    <h6 class="text-muted card-subtitle mb-2">Seller</h6>
+                                    <p class="card-text">I love Buyam Sellam</p>
+                                    <form action="profile.php" method="POST">
+                                    <button class="btn btn-primary btn-block" name="logout" type="submit">Log Out</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
