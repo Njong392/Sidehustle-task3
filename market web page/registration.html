@@ -1,3 +1,46 @@
+<?php
+
+$conn = mysqli_connect("localhost","Emy", "root", "LogInsystem");//connect to database
+//checks connection
+if(mysqli_connect_error()) {
+    echo 'Failed to connect' . mysqli_connect_error();
+}
+
+
+//When form submitted, insert values into database
+if(isset($_REQUEST['name'])){
+    //removes backlashes
+    $name = stripslashes($_REQUEST['name']);
+    $name = mysqli_real_escape_string($conn, $name);
+    $email = stripslashes($_REQUEST['email']);
+    $email = mysqli_real_escape_string($conn, $email);
+    $password= stripslashes($_REQUEST['password']);
+    $password = mysqli_real_escape_string($conn, $password);
+    $create_datetime = date("Y-m-d H:i:s");
+    $query = "INSERT into `users` (name, password, email, create_datetime)
+VALUES ('$name', '$email','" .md5($password)."', '$create_datetime')";
+    $result = mysqli_query($conn, $query);
+    if($result){
+        $_POST['name'] = $_SESSION['name'];
+
+        header('Location: login.php');
+    }
+    else{
+        echo 'Invalid entries';
+    }
+
+
+
+}
+
+
+?>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 
@@ -39,11 +82,9 @@ Week IV sidehustle- Enjoy!!">
         <div class="container"><a class="navbar-brand logo" href="#">BUYAM SELLAM</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
                     
-                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about-us.html">Reviews</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+
                 </ul>
             </div>
         </div>
@@ -55,10 +96,11 @@ Week IV sidehustle- Enjoy!!">
                     <h2 class="text-info page-intro-title">Registration</h2>
                     <p class="page-intro-greeting">Welcome<br>Fill the form below to create your account on this site.</p>
                 </div>
-                <form>
-                    <div class="form-group"><label for="name">Name</label><input class="form-control item" type="text" id="name"></div>
-                    <div class="form-group"><label for="password">Password</label><input class="form-control item" type="password" id="password"></div>
-                    <div class="form-group"><label for="email">Email</label><input class="form-control item" type="email" id="email"></div><button class="btn btn-primary btn-block" type="submit">Sign Up</button>
+                <form action="registration.php" method="POST">
+                    <div class="form-group"><label for="name">Name</label><input class="form-control item" type="text" id="name" name="name" required></div>
+                    <div class="form-group"><label for="password">Password</label><input class="form-control item" type="password" id="password" name="password" required></div>
+                    <div class="form-group"><label for="email">Email</label><input class="form-control item" type="email" id="email" name="email" required></div>
+                    <button class="btn btn-primary btn-block" type="submit" name="submit">Sign Up</button>
                 </form>
             </div>
         </section>
